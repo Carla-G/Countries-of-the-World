@@ -1,0 +1,133 @@
+.details-page {
+    background: rgb(19, 52, 82);
+    padding-bottom: 2rem;
+}
+
+.link-container {
+    padding: 1rem 1rem 0;
+}
+
+.link-back {
+    text-decoration: none;
+    color: rgb(122, 188, 188);
+    font-weight: 600;
+}
+
+.country-title {
+    text-align: center;
+    padding: 1rem 0 0.8rem;
+    font-size: 4rem;
+    font-family: 'Oswald', sans-serif;
+    color: rgb(122, 188, 188);
+}
+
+.native-name-container {
+    display: flex;
+    justify-content: center;
+}
+
+.native-name-label {
+    font-size: 3rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    color: rgb(122, 188, 188);
+    text-decoration: underline;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+}
+
+.native-name {
+    font-size: 3rem;
+    font-family: 'Oswald', sans-serif;
+    color: rgb(122, 188, 188);
+    padding-bottom: 1rem;
+}
+
+.flag-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+} 
+
+.flag-img {
+    width: 50%;
+    border-radius: 5px;
+}
+
+.info-container {
+    background: rgb(122, 188, 188);
+    margin: 2rem 4rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.info-left {
+    display: inline-flex;
+    flex-direction: column;
+    width: 50%;
+    line-height: 4rem;
+}
+
+.info-right {
+    display: inline-flex;
+    flex-direction: column;
+    width: 50%;
+    line-height: 4rem;
+}
+
+.info-container h2 {
+    font-weight: 400;
+}
+
+.info-label {
+    font-weight: 700; 
+}
+
+.link-to-neighbor-country {
+    text-decoration: none;
+    color: black;
+}
+
+.link-to-neighbor-country:hover {
+    color: rgb(40, 110, 83);
+    font-weight: 500;
+}
+
+@media screen and (max-width: 800px) {
+    .country-title {
+        font-size: 3rem;
+    }
+
+    .native-name-label {
+        font-size: 2rem;
+        padding-right: 0.5rem;
+    }
+    
+    .native-name {
+        font-size: 2rem;
+    }
+
+    .flag-img {
+        width: 75%;
+    }
+
+    .info-left {
+        display: block;
+        width: 100%;
+        line-height: 3rem;
+    }
+    
+    .info-right {
+        display: block;
+        width: 100%;
+        line-height: 3.5rem;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .info-container {
+        padding: 0.5;
+        margin: 2rem 1rem 0;
+    }
+}

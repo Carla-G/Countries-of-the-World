@@ -1,4 +1,50 @@
+.countries-page {
+    background: rgb(19, 52, 82);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+}
+
 .countries-list {
     display: grid;
     grid-template-columns: auto auto auto;
+    margin-top: 1rem;
+}
+
+.countries-title {
+    font-family: 'Oswald', sans-serif;
+    color: rgb(122, 188, 188);
+    font-size: 5rem;
+    text-align: center;
+    padding: 1rem 0;
+    text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.9);
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1300px) {
+    .countries-list {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .countries-list {
+        grid-template-columns: auto;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .countries-title {
+        font-size: 3.5rem;
+        line-height: 4rem;
+    }
 }

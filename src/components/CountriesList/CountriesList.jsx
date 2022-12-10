@@ -1,14 +1,15 @@
+/* eslint-disable no-mixed-operators */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useContext } from 'react';
 import SearchBar from "./SearchBar/SearchBar";
+import FilterContinent from "./FilterContinent/FilterContinent";
 import CountryCard from "./CountryCard/CountryCard";
 import Pagination from "./Pagination/Pagination";
 import CountriesContext from "../../contexts/CountriesContext";
 import "./CountriesList.css";
 
 const CountriesList = () => {
-  //countries is the state where all the countries are kept after they are fetched and fetchCountries is the function that sets countries to the information that's received from the API
-    const {countries, fetchCountries} = useContext(CountriesContext);
+    const {countries, fetchCountries, search, chosenRegion} = useContext(CountriesContext);
   
   //Variables used in the pagination
     const [currentPage, setCurrentPage] = useState(1);
@@ -19,34 +20,36 @@ const CountriesList = () => {
     countries.slice(indexOfFirstCountry, indexOfLastCountry)
     );
 
-    //State where the search value is kept
-    const [search, setSearch] = useState("");
-
     //The fetchCountries is only made on the mounting phase of this component
     useEffect(() => {
         fetchCountries()
     }, [])
 
   return (
-    <div>
-        <h1>Countries</h1>
-        <SearchBar search={search} setSearch={setSearch} />
+    <div className='countries-page'>
+        <h1 className="countries-title">Countries List 🌏</h1>
+        <div className='filters'>
+          <SearchBar />
+          <FilterContinent />
+        </div>
         <div className='countries-list'>
-          {countries && search !== "" ? 
-            countries?.filter((country) => country.name.toLowerCase().startsWith(search)).map((country, index) => (
+          {countries && search !== "" || chosenRegion !== "" ? 
+            countries?.filter((country) => chosenRegion !== "" ? country.region === chosenRegion : country).filter((country) => country.name.toLowerCase().startsWith(search)).map((country, index) => (
                 <CountryCard country={country} key={index}/>
             )) : currentCountries?.map((country, index) => (
               <CountryCard country={country} key={index}/>
           ))
           }
         </div>
+      {search === "" && chosenRegion === "" ?
         <Pagination
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         setCurrentCountries={setCurrentCountries}
         indexOfFirstCountry={indexOfFirstCountry}
         indexOfLastCountry={indexOfLastCountry}
-        countriesPerPage={countriesPerPage} />
+        countriesPerPage={countriesPerPage} /> : null
+      }
     </div>
   )
 }

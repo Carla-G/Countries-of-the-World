@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.background {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("../../assets/Earth-Horizontal.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.landing-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 5.5rem;
+    background: -webkit-linear-gradient(rgb(48,146,195), rgb(217, 215, 238));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 3rem 2rem;
+}
+
+.landing-button{
+    font-size: 1rem;
+    font-weight: 700;
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(40, 40, 40);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin: 0 16vw;
+}
+
+.landing-button:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.landing-button:active {
+    color: #000
+}
+
+.landing-button:active:after {
+    background: transparent;
+}
+
+.landing-button:hover:before {
+    opacity: 1;
+}
+
+.landing-button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(35, 35, 35);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .background {
+        background-image: url("../../assets/Earth-Vertical.jpg");
+    } 
+
+    .landing-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 3.5rem;
+        text-align: center;
+        padding: 4rem 0 3rem;
+    }
+
+    .landing-button {
+        display: block;
+        margin: 0 auto;
+    }
+}

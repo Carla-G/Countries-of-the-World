@@ -1,0 +1,21 @@
+.change-page-buttons {
+    text-align: center;
+}
+
+.leftBtn, .rightBtn {
+    margin: 1rem 8rem;
+    border-radius: 50%;
+    border: none;
+    padding: 0.8rem 1rem;
+    font-size: 1.5rem;
+    background-color: rgb(63, 126, 126);
+    color: white;
+}
+
+.leftBtn:hover, .rightBtn:hover {
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3),0px 10px 15px -3px rgba(0,0,0,0.3);
+}
+
+.leftBtn:active, .rightBtn:active {
+    box-shadow: none;
+}

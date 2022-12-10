@@ -1,0 +1,21 @@
+.search-label {
+    font-weight: 700;
+    color: white;
+    padding: 1rem;
+}
+
+#search {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin-right: 3rem;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 830px) {
+    #search {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+}

@@ -1,4 +1,63 @@
+.link-details {
+    text-decoration: none;
+    color: rgb(122, 188, 188);
+}
+
+.link-details:hover {
+    color: rgb(255, 255, 255);
+}
+
+.country-card {
+    text-align: center;
+    margin: 0.4rem 2rem;
+}
+
+.country-card:hover {
+    background-color: rgb(63, 126, 126);
+    border-radius: 20px;
+}
+
 .flag {
-    width: 400px;
-    height: auto;
+    width: 350px;
+    height: 200px;
+    margin: 2rem 1rem 0 1rem;
+    padding-top: 2rem;
+}
+
+.flag-information {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.country-name {
+    text-align: center;
+    padding-bottom: 1rem;
+    max-width: 350px;
+}
+
+@media screen and (max-width: 1500px) {
+    .country-card {
+        margin: 0.4rem 0.5rem;
+    }
+
+    .flag {
+        width: 400px;
+        height: 250px;
+        margin: auto 0;
+    }
+
+    .country-name {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .flag {
+        width: 350px;
+    }
+
+    .country-name {
+        max-width: 350px;
+    }
 }
